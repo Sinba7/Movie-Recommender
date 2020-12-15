@@ -33,6 +33,7 @@ clear_button = dbc.Button("Clear All", id='clear-button', color='light')
 
 def movie_display_layout(recom_mv_df):# movieid/title
     recom_mv_df.index = np.arange(len(recom_mv_df))
+    recom_mv_df = recom_mv_df.iloc[:100]
     return html.Div([
                 dbc.Row([
                     dbc.Col(
