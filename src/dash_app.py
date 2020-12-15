@@ -13,6 +13,7 @@ app = dash.Dash(
     external_scripts=external_scripts
 )
 
+app_server = app.server
 app.config['suppress_callback_exceptions']=True
 
 app.layout = get_layout()
