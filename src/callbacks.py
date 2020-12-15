@@ -2,10 +2,10 @@ import pandas as pd
 import json
 import dash
 from dash.dependencies import Input, Output, State
-from load_data import rated_movie_df, rating_df
-from genres_based_recom import top_popular_movie, top_high_rated_movie
-from collaborative_recom import  collab_recommender
-from layout_functions import *
+from src.load_data import rated_movie_df, rating_df
+from src.genres_based_recom import top_popular_movie, top_high_rated_movie
+from src.collaborative_recom import  collab_recommender
+from src.layout_functions import *
 
 
 def register_callbacks(app):

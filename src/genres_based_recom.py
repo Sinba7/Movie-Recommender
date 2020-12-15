@@ -1,5 +1,5 @@
 import pandas as pd
-from load_data import rating_df, movie_df
+from src.load_data import rating_df, movie_df
 
 
 # get n_reviewers and average rating

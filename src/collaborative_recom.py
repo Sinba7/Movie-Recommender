@@ -1,6 +1,6 @@
 import pandas as pd
 from surprise import Dataset, Reader, KNNWithMeans,  KNNWithZScore
-from load_data import rating_df 
+from src.load_data import rating_df 
 
 
 def collab_recommender(train_data, test_data, user_based=True, normalization= False, k=100, sim='cosine'):

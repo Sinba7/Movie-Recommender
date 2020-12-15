@@ -1,8 +1,8 @@
 from flask import Flask
 import dash
-from stylesheets import *
-from layout_functions import get_layout
-from callbacks import register_callbacks
+from src.stylesheets import *
+from src.layout_functions import get_layout
+from src.callbacks import register_callbacks
 
 server = Flask(__name__)
 app = dash.Dash(
