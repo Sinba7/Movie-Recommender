@@ -14,7 +14,7 @@ logo_header = html.Div(children=[
             html.Img(src='assets/movie_logo_2.png', style={'width':'10%'}),
             html.Div([
                 html.H1(children="Movie Recommender"),
-                dbc.Alert(color='info', children="Hi, welcome to my movie store. To get movie recommendations, first, please select a recommendation engine. For genre-based recommender, please select your favorite genres; for collbarative recommender, plase rate the sample movies as many as possible and then click on get recommendations.")
+                dbc.Alert(color='info', children="Hi, welcome to my movie store. To get movie recommendations, please first select a recommender engine. Then for genre-based recommender, please select your favorite genres; for collbarative recommender, plase rate some movies and click on get recommendations. Hope you enjoy our app :).")
             ], style={'marginLeft':40}),
         ], style={'display':'flex', 'alignItems':'top'})
 
@@ -33,7 +33,7 @@ clear_button = dbc.Button("Clear All", id='clear-button', color='light')
 
 def movie_display_layout(recom_mv_df):# movieid/title
     recom_mv_df.index = np.arange(len(recom_mv_df))
-    recom_mv_df = recom_mv_df.iloc[:100]
+    # recom_mv_df = recom_mv_df.iloc[:100]
     return html.Div([
                 dbc.Row([
                     dbc.Col(
@@ -98,8 +98,8 @@ system_2_content = html.Div(
         # dbc.CardHeader(
             dbc.Tabs(
                 [
-                    dbc.Tab(id="tab-rate", label="Rate your favorite movies", tab_id="tab-rate", label_style={"color": "black", "font":"bold"}), # label_style={"color": "#00AEF9"}
-                    dbc.Tab(id="tab-recom", label="Get your recommendations", tab_id="tab-recom", label_style={"color": "grey"}), # label_style={"color": "#00AEF9"}
+                    dbc.Tab(id="tab-rate", label="Rate Your Favorite Movies", tab_id="tab-rate", label_style={"color": "black", "font":"bold"}), # label_style={"color": "#00AEF9"}
+                    dbc.Tab(id="tab-recom", label="Get Your Recommendations", tab_id="tab-recom", label_style={"color": "grey"}), # label_style={"color": "#00AEF9"}
                 ],
                 id="tabs",
                 active_tab="tab-rate",
