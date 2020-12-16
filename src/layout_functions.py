@@ -13,8 +13,8 @@ nmovies_sample = 300
 logo_header = html.Div(children=[
             html.Img(src='assets/movie_logo_2.png', style={'width':'10%'}),
             html.Div([
-                html.H1(children="Movie Recommender"),
-                dbc.Alert(color='info', children="Hi, welcome to my 20th Century movie store. To get movie recommendations, please first select a recommender engine. Then for genre-based recommender, please select your favorite genres; for collbarative recommender, plase rate some movies and click on get recommendations. Hope you enjoy our app :).")
+                html.H1(children="Nostalgia Movie Recommender"),
+                dbc.Alert(color='info', children="Hi, welcome to our movie theater. To get movie recommendations, please first select a recommender engine. For genre-based recommender, please select your favorite genres; for collbarative recommender, plase rate some movies and click on get recommendations. Hope you enjoy our app :).")
             ], style={'marginLeft':40}),
         ], style={'display':'flex', 'alignItems':'top'})
 
