@@ -11,10 +11,14 @@ nmovies_sample = 300
 
 # logo and header of website
 logo_header = html.Div(children=[
-            html.Img(src='assets/movie_logo_2.png', style={'width':'10%'}),
+            html.Img(src='assets/movie_logo_2.png', style={'width':'12%'}),
             html.Div([
                 html.H1(children="Nostalgia Movie Recommender"),
-                dbc.Alert(color='info', children="Hi, welcome to our movie theater. To get movie recommendations, please first select a recommender engine. For genre-based recommender, please select your favorite genres; for collbarative recommender, plase rate some movies and click on get recommendations. Hope you enjoy our app :).")
+                dbc.Alert(color='info', children="Hi, welcome to my movie theater. I just bought some 20th century \
+                movies and would like to show them to you. To get your recommendations, \
+                please first select a recommender engine. For genre-based recommender, please select your favorite \
+                genres; for collbarative recommender, plase rate some movies and click on get recommendations. \
+                Hope you enjoy my app :). ")
             ], style={'marginLeft':40}),
         ], style={'display':'flex', 'alignItems':'top'})
 
@@ -33,7 +37,6 @@ clear_button = dbc.Button("Clear All", id='clear-button', color='light')
 
 def movie_display_layout(recom_mv_df):# movieid/title
     recom_mv_df.index = np.arange(len(recom_mv_df))
-    # recom_mv_df = recom_mv_df.iloc[:100]
     return html.Div([
                 dbc.Row([
                     dbc.Col(
@@ -67,7 +70,7 @@ rate_movie_div = html.Div([
                 dbc.CardImg(src=f"https://liangfgithub.github.io/MovieImages/{rated_movie_df.loc[(i+j*nmovies_per_row), 'movieid']}.jpg", top=True, style={'width':'100%'}),
                 dbc.CardBody([
                     html.Div(children=rated_movie_df.loc[(i+j*nmovies_per_row), 'title'], style={'fontSize': '14px', 'marginBottom':'10px'}),
-                    daq.Slider(id=f'slider_{i+j*nmovies_per_row}', min=0, max=5, value=0, marks={'0':'0', '1': '1', '2': '2', '3': '3', '4': '4', '5': '5'}, size=130)  
+                    daq.Slider(id=f'slider_{i+j*nmovies_per_row}', min=0, max=5, value=0, marks={'0':'0', '1': '1', '2': '2', '3': '3', '4': '4', '5': '5'}, size=130),
                 ])
             ], outline=True, style={'marginTop':10, 'marginBottom':10})
         ) for i in range(nmovies_per_row)
