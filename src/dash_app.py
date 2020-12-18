@@ -8,7 +8,10 @@ server = Flask(__name__)
 app = dash.Dash(
     __name__,
     server=server,
-    # requests_pathname_prefix = 
+    # requests_pathname_prefix =
+    meta_tags=[
+            {"name": "viewport", "content": "width=device-width, initial-scale=1"}
+        ],
     external_stylesheets=external_stylesheets,
     external_scripts=external_scripts
 )
