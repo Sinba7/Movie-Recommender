@@ -35,7 +35,4 @@ def top_high_rated_movie(genres):
     return sorted_filtered_movies[['movieid', 'title']] 
 
 
-# evaluate results
-assert len(top_popular_movie(genres = 'Animation')) == 105
-assert len(top_high_rated_movie(genres = 'Animation')) == 82
 

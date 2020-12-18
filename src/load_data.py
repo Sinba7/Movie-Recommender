@@ -13,8 +13,8 @@ movie_dict = {'movieid':[], 'title':[], "genres":[]}
 for line in mv_file:
     decode_line = line.decode('latin-1')[:-1]
     mv_id, title, genre = decode_line.split("::")
-    if not mv_id:
-        continue
+    # if not mv_id:
+    #     continue
     movie_dict['movieid'].append(int(mv_id))
     movie_dict['title'].append(title)
     movie_dict['genres'].append(genre)
