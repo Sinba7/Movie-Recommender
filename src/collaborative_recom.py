@@ -23,11 +23,9 @@ def collab_recommender(train_data, test_data, user_based=True, normalization= Fa
     Output:
     - pred_rating: dataframe, n*2, columns are ['movieid', 'rating']
     """
+
     try:
         function_log.trace('Start collaborative recommendation function')
-        if train_data is None or test_data is None:
-            function_log.exception("Training and test data cannot be none")
-            raise ValueError("Training and test data cannot be none.")
 
         reader = Reader(rating_scale=(1,5))
         data = Dataset.load_from_df(train_data, reader)
@@ -52,6 +50,9 @@ def collab_recommender(train_data, test_data, user_based=True, normalization= Fa
             pred_rating['rating'].append(pred.est)
         function_log.trace('Finish collaborative recommendation function')
         return pd.DataFrame(pred_rating)
-
+    except ValueError:
+        function_log.warn("Training and test data cannot be none.")
+        raise ValueError
     except Exception as x:
         function_log.exception(f'collaborative recommendation function failed {x}')
+

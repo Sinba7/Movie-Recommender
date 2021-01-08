@@ -1,11 +1,12 @@
 import pytest
 from src.genres_based_recom import top_popular_movie, top_high_rated_movie
 from src.collaborative_recom import collab_recommender
-from src.load_data import rating_df, movie_df, rated_movie_df
+from src.load_data import load_data
 
 
 @pytest.fixture()
 def data_fixture():
+    rating_df, movie_df, genres, rated_movie_df = load_data()
     return rating_df, movie_df, rated_movie_df
 
 
