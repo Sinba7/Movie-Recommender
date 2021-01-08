@@ -3,7 +3,8 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_daq as daq
 import numpy as np
-from src.load_data import rated_movie_df, genres
+# from src.load_data import rated_movie_df, genres
+from src.genres_based_recom import * #rating_df, movie_df, genres, rated_movie_df, top_popular_movie, top_high_rated_movie
 
 
 nmovies_per_row = 6
