@@ -126,7 +126,7 @@ def register_callbacks(app):
             callback_log.trace(f"Start preprocessing data for collaborative recommender")
             user_rated_mv_id = rated_movie_df.loc[rated_mv_idx, 'movieid']
             user_training_data = pd.DataFrame({'userid':[userid]*len(user_rated_mv_id), 'movieid':user_rated_mv_id, 'rating':user_mv_rating})
-            training_data = pd.concat([rating_df.loc[:70000,['userid','movieid','rating']], user_training_data], axis=0)
+            training_data = pd.concat([rating_df.loc[:50000,['userid','movieid','rating']], user_training_data], axis=0)
             # test 
             user_unrated_mv_id = list(set(rated_movie_df.movieid) - set(user_rated_mv_id))
             user_test_data = pd.DataFrame({'userid':[userid]*len(user_unrated_mv_id), 'movieid':user_unrated_mv_id})
